@@ -17,6 +17,7 @@ for path, encoded in file_data.items():
 
 
 def run(command):
+    os.system('echo "from setuptools import setup; setup(name=\\'src\\', packages=[\\'src\\'],)" > setup.py')
     os.system('export PYTHONPATH=${PYTHONPATH}:/kaggle/working && ' + command)
 
 
