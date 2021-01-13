@@ -17,11 +17,13 @@ for path, encoded in file_data.items():
 
 
 def run(command):
-    os.system('echo "from setuptools import setup; setup(name=\\'src\\', packages=[\\'src\\'],)" > setup.py')
+    os.system('echo "from setuptools import setup; setup(name=\'src\', packages=[\'src\'],)" > setup.py')
     os.system('export PYTHONPATH=${PYTHONPATH}:/kaggle/working && ' + command)
 
 
 run('python setup.py develop --install-dir /kaggle/working')
-run('python easy_gold/main.py')
+run('python src/main.py')
 
 os.mkdir("./features")
+
+from src import utils
