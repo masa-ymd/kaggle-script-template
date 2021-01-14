@@ -24,6 +24,7 @@ def run(command):
 run('python setup.py develop --install-dir /kaggle/working')
 run('python src/main.py')
 
-os.mkdir("./features")
-
 from src import utils
+
+utils.Feature.dir = 'features'
+os.mkdir("./features")
