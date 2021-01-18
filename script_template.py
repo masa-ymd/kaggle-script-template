@@ -26,5 +26,8 @@ run('python src/main.py')
 
 from src import utils
 
-utils.Feature.dir = 'features'
-os.mkdir("./features")
+FEATURES_DIR = "features"
+
+utils.Feature.dir = FEATURES_DIR
+if not os.path.exists(FEATURES_DIR):
+    os.mkdir(FEATURES_DIR)
